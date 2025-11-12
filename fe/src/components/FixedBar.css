@@ -1,0 +1,17 @@
+.fixed-bar {
+    position: fixed;
+    width: 100%;
+    padding: 2px;
+    z-index: 10;
+    background-color: white;
+}
+
+
+.logo {
+    width: 15rem;
+}
+
+.login {
+    float: right;
+    margin-right: 50px;
+}
