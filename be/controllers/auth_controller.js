@@ -52,7 +52,6 @@ const register = async (req, res) => {
 //Login user
 const login = async (req, res) => {
     try {
-        console.log(req.body)
         const { email, password } = req.body;
         if (!email || !password) {
             return res.status(400).json({ message: "Mandatory fields are empty" });
@@ -87,5 +86,4 @@ const login = async (req, res) => {
 module.exports = {
     register,
     login,
-
 };
