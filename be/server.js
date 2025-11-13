@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 require("./models/dbconnect");
 
-// global.__basedir = __dirname;
+global.__basedir = __dirname;
 
 dotenv.config();
 const app = express();

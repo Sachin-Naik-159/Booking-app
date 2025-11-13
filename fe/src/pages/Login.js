@@ -72,7 +72,7 @@ function Login() {
                                         type="email"
                                         placeholder="email"
                                         value={user.email}
-                                        onChange={(e) => setUser({ ...user, email: e.target.value })}
+                                        onChange={(e) => setUser({ ...user, "email": e.target.value })}
                                     />
                                 </div>
 
@@ -81,7 +81,7 @@ function Login() {
                                         type="password"
                                         placeholder="password"
                                         value={user.password}
-                                        onChange={(e) => setUser({ ...user, password: e.target.value })}
+                                        onChange={(e) => setUser({ ...user, "password": e.target.value })}
                                     />
                                 </div>
                             </fieldset>
@@ -105,7 +105,7 @@ function Login() {
                                 )}
                             </fieldset>
                         </form>
-                        <p>Don't have an account ? <a onClick={signupPage}> Register Here</a></p>
+                        <p>Don't have an account? <u> <a onClick={signupPage}> Register Here</a></u></p>
                     </div>
                 </div>
             </div>

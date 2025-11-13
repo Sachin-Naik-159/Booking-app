@@ -31,11 +31,6 @@ function FixedBar() {
         admin = false;
     };
 
-    useEffect(() => {
-        console.log(admin);
-
-    }, [])
-
     return (
         <div className="fixed-bar row p-1">
             <div className="col-11">

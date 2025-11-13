@@ -1,7 +1,19 @@
+import { toast } from "react-toastify";
 import FixedBar from "../components/FixedBar";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
 
 function VenueDetail() {
+    const navigate = useNavigate();
+    const checkOutPage = () => {
+        let token = localStorage.getItem("token")
+        if (token) {
+            navigate(`/checkout`)
+        } else {
+            navigate(`/login`);
+            toast.error("Login")
+        };
+    }
     return (
 
         <div className="Container">
@@ -46,15 +58,12 @@ function VenueDetail() {
                                 </div>
 
                             </div>
-                            <div className="col-4 pt-3">
-                                <button type="button" className="btn btn-success mt-3 p-2" style={{ width: "100%" }}>Book Now</button>
-                                <div className="pt-1 mt-1">
-                                    <button type="button" className="btn btn-outline-secondary" style={{ width: "50%", color: "Black" }}><i className="fa-solid fa-share-nodes fa-lg"></i>    Share</button>
-                                    <button type="button" className="btn btn-outline-success" style={{ width: "50%" }}>Bulk / Corporate</button>
-                                </div>
+                            <div className="col-4 pt-3 mt-5">
+                                <button type="button" className="btn btn-success mt-3 p-2" style={{ width: "100%" }} onClick={checkOutPage}>Book Now</button>
+
                                 <div className="row mt-3 pt-3">
                                     <h3>Timing</h3>
-                                    <p>5:30 AM - 10 PM</p>
+                                    <p>9 AM - 4 PM</p>
                                 </div>
                                 <div className="row mt-3 pt-3">
                                     <h3>Location</h3>
