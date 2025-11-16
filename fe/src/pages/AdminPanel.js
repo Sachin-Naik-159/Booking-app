@@ -8,8 +8,10 @@ function AdminPanel() {
     const initialState = { _id: "1", custId: { username: "" }, venue: "", bookingDate: "2025-11-13T03:30:00.000Z", cost: "" }
     const [bookings, setBookings] = useState([initialState]);
     const api_URL = process.env.REACT_APP_BASE_API_URL;
-    // const type = window.location.pathname.split("/")[1];
-
+    const headers = {
+        'Authorization': `Bearer ${localStorage.getItem("token")}`,
+        'Content-Type': 'application/json'
+    };
 
     let user = useSelector((state) => {
         return state.userReducer.user;
@@ -17,16 +19,18 @@ function AdminPanel() {
 
     const cancleBooking = async (_id) => {
         try {
-
-            // let resp = await axios.delete(`${api_URL}/book/booking`, { "_id": "bookings._id" })
-            // console.log(resp);
-            // toast.success(resp.message)
-            // getBooking()
+            let data = { _id: _id }
+            const resp = await axios.delete(`http://localhost:5000/api/v1/book/booking`, {
+                headers: headers,
+                data,
+            });
+            toast.success(resp.data.message)
+            getBooking()
         } catch (err) { throw err }
     }
 
     const getBooking = async () => {
-        let resp = await axios.get(`${api_URL}/book/booking/admin`, user)
+        let resp = await axios.get(`${api_URL}/book/booking/admin`, { headers: headers, user })
         setBookings(resp.data)
     }
 
@@ -48,9 +52,6 @@ function AdminPanel() {
     }
 
     useEffect(() => {
-        //Authentication
-        axios.defaults.headers.common["Authorization"] =
-            "Bearer " + localStorage.getItem("token");
         getBooking();
     }, [])
 

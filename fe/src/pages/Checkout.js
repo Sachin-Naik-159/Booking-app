@@ -9,6 +9,10 @@ function Checkout() {
     const api_URL = process.env.REACT_APP_BASE_API_URL;
     const [date, setDate] = useState(new Date());
     const [time, setTime] = useState("9");
+    const headers = {
+        'Authorization': `Bearer ${localStorage.getItem("token")}`,
+        'Content-Type': 'application/json'
+    };
 
     const log = async () => {
         let token = localStorage.getItem("token")

@@ -30,11 +30,10 @@ const delBooking = async (req, res) => {
     try {
         const { _id } = req.body;
         console.log(_id);
-        res.status(200).json({ message: "Deleated Booking" })
-        // let resp = await BookingModel.findOneAndDelete({ _id });
-        // if (resp === null) {
-        //     res.json({ message: "No Booking", resp });
-        // } else res.status(200).json({ message: "Deleated Booking", resp });
+        let resp = await BookingModel.findOneAndDelete({ _id });
+        if (resp === null) {
+            res.json({ message: "No Booking", resp });
+        } else res.status(200).json({ message: "Deleated Booking" });
     } catch (err) {
         throw err;
     }
@@ -54,7 +53,7 @@ const getBooking = async (req, res) => {
             path: "custId",
             model: "UserModel",
             select: "username email",
-        })
+        }).sort({ bookingDate: 1, username: 1 })
         res.status(200).json(data);
 
     } catch (err) {

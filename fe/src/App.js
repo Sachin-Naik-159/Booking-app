@@ -34,6 +34,8 @@ function App() {
         //Authentication
         axios.defaults.headers.common["Authorization"] =
           "Bearer " + localStorage.getItem("token");
+        axios.defaults.headers.post['Content-Type'] =
+          'application/json';
 
 
         //when user has a login active session
