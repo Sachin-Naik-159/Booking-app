@@ -20,7 +20,7 @@ function AdminPanel() {
     const cancleBooking = async (_id) => {
         try {
             let data = { _id: _id }
-            const resp = await axios.delete(`http://localhost:5000/api/v1/book/booking`, {
+            const resp = await axios.delete(`${api_URL}/book/booking`, {
                 headers: headers,
                 data,
             });
