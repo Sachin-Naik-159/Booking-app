@@ -1,0 +1,12 @@
+@media only screen and (max-width: 768px) {
+    .imgcss {
+        width: 90vw;
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+    .imgcss {
+        width: 50vw;
+    }
+}

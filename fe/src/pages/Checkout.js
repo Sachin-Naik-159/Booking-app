@@ -46,10 +46,10 @@ function Checkout() {
                 <div className="container mt-5 shadow-lg p-3 mb-5 bg-white rounded">
                     <div className="row justify-content-center align-items-center">
 
-                        <div className="col-6">
+                        <div className="col-lg-6 col-md-12">
                             <img src={require("../asset/Venues/1/OlympiansDen1696830589175.webp")} className="d-block w-100" alt="1" />
                         </div>
-                        <div className="col-6">
+                        <div className="col-lg-6 col-md-12">
                             <h2 className="pb-1">Olympian's Den</h2>
                             <p>Kalinganagar</p>
                             <form>

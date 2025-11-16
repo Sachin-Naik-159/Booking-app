@@ -26,7 +26,7 @@ function VenueDetail() {
                     </div>
                     <div className="col-10">
                         <div className="row mt-5 pt-5">
-                            <div className="col-8">
+                            <div className="col-lg-8 col-md-12">
                                 <div>
                                     <h1 className="pb-1">Olympian's Den</h1>
                                     <p>Kalinganagar</p>
@@ -58,7 +58,7 @@ function VenueDetail() {
                                 </div>
 
                             </div>
-                            <div className="col-4 pt-3 mt-5">
+                            <div className="col-lg-4 col-md-12 pt-3 mt-5">
                                 <button type="button" className="btn btn-success mt-3 p-2" style={{ width: "100%" }} onClick={checkOutPage}>Book Now</button>
 
                                 <div className="row mt-3 pt-3">

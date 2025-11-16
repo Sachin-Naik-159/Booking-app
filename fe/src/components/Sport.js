@@ -6,7 +6,7 @@ function Sport() {
                 <div className="row pt-5 mt-5">
                     <h2 className="mb-2" style={{ textAlign: 'left' }}>Popular Sports</h2>
 
-                    <div className="col-2">
+                    <div className="col-xl-2 col-lg-4 col-md-6 col-sm-12 mt-2 pt-2">
                         <div className="card">
                             <img className="card-img-top" src={require("../asset/badminton_new.avif")} alt="Badminton" />
                             <div className="card-body">
@@ -14,7 +14,7 @@ function Sport() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-2">
+                    <div className="col-xl-2 col-lg-4 col-md-6 col-sm-12 mt-2 pt-2">
                         <div className="card">
                             <img className="card-img-top" src={require("../asset/cricket_new.avif")} alt="Cricket" />
                             <div className="card-body">
@@ -22,7 +22,7 @@ function Sport() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-2">
+                    <div className="col-xl-2 col-lg-4 col-md-6 col-sm-12 mt-2 pt-2">
                         <div className="card">
                             <img className="card-img-top" src={require("../asset/football_new.avif")} alt="Football" />
                             <div className="card-body">
@@ -30,7 +30,7 @@ function Sport() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-2">
+                    <div className="col-xl-2 col-lg-4 col-md-6 col-sm-12 mt-2 pt-2">
                         <div className="card">
                             <img className="card-img-top" src={require("../asset/swimming_new.avif")} alt="Swimming" />
                             <div className="card-body">
@@ -38,7 +38,7 @@ function Sport() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-2">
+                    <div className="col-xl-2 col-lg-4 col-md-6 col-sm-12 mt-2 pt-2">
                         <div className="card">
                             <img className="card-img-top" src={require("../asset/table_tennis_new.avif")} alt="TableTennis" />
                             <div className="card-body">
@@ -46,7 +46,7 @@ function Sport() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-2">
+                    <div className="col-xl-2 col-lg-4 col-md-6 col-sm-12 mt-2 pt-2">
                         <div className="card">
                             <img className="card-img-top" src={require("../asset/tennis_new.avif")} alt="Tennis" />
                             <div className="card-body">
