@@ -1,4 +1,5 @@
 const BookingModel = require("../models/booking_model");
+const UserModel = require("../models/user_model");
 const bcrypt = require("bcryptjs");
 var jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
@@ -25,6 +26,44 @@ const book = async (req, res) => {
     }
 };
 
+const delBooking = async (req, res) => {
+    try {
+        const { _id } = req.body;
+        console.log(_id);
+        res.status(200).json({ message: "Deleated Booking" })
+        // let resp = await BookingModel.findOneAndDelete({ _id });
+        // if (resp === null) {
+        //     res.json({ message: "No Booking", resp });
+        // } else res.status(200).json({ message: "Deleated Booking", resp });
+    } catch (err) {
+        throw err;
+    }
+};
+
+const getBooking = async (req, res) => {
+    try {
+
+        let query = { custId: req.user._id };
+        if (req.params.type !== "user") {
+            if (req.user.isAdmin) {
+                query = {};
+            }
+        }
+
+        let data = await BookingModel.find(query).populate({
+            path: "custId",
+            model: "UserModel",
+            select: "username email",
+        })
+        res.status(200).json(data);
+
+    } catch (err) {
+        throw err;
+    }
+};
+
 module.exports = {
-    book
+    book,
+    delBooking,
+    getBooking
 };

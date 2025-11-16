@@ -20,7 +20,7 @@ function Checkout() {
                 bookingDate,
                 cost: 400,
             }
-            const postResponse = await axios.post(`${api_URL}/book/book`, data);
+            const postResponse = await axios.post(`${api_URL}/book/booking`, data);
             toast(postResponse.data.message);
             if (postResponse.data.message === "Slot Booked") {
                 navigate(`/`)
@@ -29,11 +29,6 @@ function Checkout() {
             navigate(`/login`);
             toast.error("Please Login")
         }
-
-
-        // let nowTime = new Date(date.setHours(parseInt(time), 0, 0))
-        // console.log(date.setHours(parseInt(time), 0, 0));
-
     }
 
 

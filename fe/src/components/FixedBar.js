@@ -1,5 +1,4 @@
 import "./FixedBar.css"
-import { useEffect } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,6 +15,12 @@ function FixedBar() {
         admin = user.isAdmin;
     }
 
+    const booking = () => {
+        navigate(`/booking`)
+    }
+    const adminPanel = () => {
+        navigate(`/adminPanel`)
+    }
     const loginPage = () => {
         navigate(`/login`)
     };
@@ -39,9 +44,13 @@ function FixedBar() {
             <div className="col-1 dropdown">
                 <i className=" login fa-regular fa-user fa-2xl mt-2 pt-3 mr-5 pr-5" type="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
                 <ul className="dropdown-menu">
-                    <li><a className="dropdown-item">Bookings</a></li>
+                    {user.isAdmin != undefined ? (
+                        <li><a className="dropdown-item" onClick={booking}>Bookings</a></li>
+                    ) : (
+                        <></>
+                    )}
                     {admin ? (
-                        <li><a className="dropdown-item">Admin Panel</a></li>
+                        <li><a className="dropdown-item" onClick={adminPanel}>Admin Panel</a></li>
                     ) : (
                         <></>
                     )}

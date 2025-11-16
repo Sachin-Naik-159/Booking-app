@@ -4,6 +4,7 @@
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Booking from "./pages/Bookings";
 import Checkout from "./pages/Checkout";
 import VenueDetail from "./pages/VenueDetail";
 
@@ -12,6 +13,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { ToastContainer, Zoom } from "react-toastify";
 import { Route, BrowserRouter, Routes, useNavigate } from "react-router-dom";
+import AdminPanel from "./pages/AdminPanel";
 
 function App() {
   const api_URL = process.env.REACT_APP_BASE_API_URL;
@@ -55,6 +57,8 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/details" element={<VenueDetail />} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/adminPanel" element={<AdminPanel />} />
       </Routes>
     );
   }
