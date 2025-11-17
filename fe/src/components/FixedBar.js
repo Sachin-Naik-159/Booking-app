@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 function FixedBar() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const type = window.location.pathname.split("/")[1];
+
     let admin = false;
 
     let user = useSelector((state) => {
@@ -29,6 +31,9 @@ function FixedBar() {
     };
 
     const handleLogout = () => {
+        if (type === "type" || type === "adminPanel" || type === "checkout") {
+            home()
+        }
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         dispatch({ type: "LOGIN_ERROR" });
@@ -44,7 +49,7 @@ function FixedBar() {
             <div className="col-1 dropdown">
                 <i className=" login fa-regular fa-user fa-2xl mt-2 pt-3 mr-5 pr-5" type="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
                 <ul className="dropdown-menu">
-                    {user.isAdmin != undefined ? (
+                    {user.isAdmin !== undefined ? (
                         <li><a className="dropdown-item" onClick={booking}>Bookings</a></li>
                     ) : (
                         <></>

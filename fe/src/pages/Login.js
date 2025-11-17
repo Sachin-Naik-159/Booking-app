@@ -3,12 +3,15 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { validate } from "../components/EmailValidator";
+
 
 function Login() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const api_URL = process.env.REACT_APP_BASE_API_URL;
     const [loading, setLoading] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
     const [user, setUser] = useState({ email: "", password: "" });
 
     const signupPage = () => {
@@ -18,7 +21,9 @@ function Login() {
         navigate(`/`)
     }
 
-
+    const showPassFun = () => {
+        setShowPassword(!showPassword)
+    }
     const subminHandler = async (e) => {
         e.preventDefault();
         setLoading(true);
@@ -27,20 +32,31 @@ function Login() {
             setLoading(false);
         } else {
             try {
-                let resp = await axios.post(`${api_URL}/auth/login`, user);
-                if (resp.status === 200) {
-                    setLoading(false);
-                    //Authentication header
-                    axios.defaults.headers.common["Authorization"] =
-                        "Bearer " + resp.data.result.token;
+                let test = validate(user.email)
+                if (test) {
+                    // the email is valid
+                    let resp = await axios.post(`${api_URL}/auth/login`, user);
+                    if (resp.status === 200) {
+                        setLoading(false);
+                        //Authentication header
+                        axios.defaults.headers.common["Authorization"] =
+                            "Bearer " + resp.data.result.token;
 
-                    toast.success(resp.data.message);
-                    localStorage.setItem("token", resp.data.result.token);
-                    localStorage.setItem("user", JSON.stringify(resp.data.result.user));
-                    dispatch({ type: "LOGIN_SUCCESS", payload: resp.data.result.user });
-                    navigate(`/`)
+                        toast.success(resp.data.message);
+                        localStorage.setItem("token", resp.data.result.token);
+                        localStorage.setItem("user", JSON.stringify(resp.data.result.user));
+                        dispatch({ type: "LOGIN_SUCCESS", payload: resp.data.result.user });
+                        navigate(`/`)
+                        setLoading(false);
+                    } else {
+                        toast.warning("Invalid email");
+                        setLoading(false);
+                    }
+                } else {
+                    toast.warning("Invalid email");
                     setLoading(false);
                 }
+
             } catch (err) {
                 if (err.response.status === 401) {
                     toast.error(err.response.data.message);
@@ -72,17 +88,26 @@ function Login() {
                                         type="email"
                                         placeholder="email"
                                         value={user.email}
+                                        required
                                         onChange={(e) => setUser({ ...user, "email": e.target.value })}
                                     />
                                 </div>
 
                                 <div className="mb-3">
                                     <input
-                                        type="password"
+                                        type={showPassword ? 'text' : 'password'}
                                         placeholder="password"
                                         value={user.password}
                                         onChange={(e) => setUser({ ...user, "password": e.target.value })}
                                     />
+                                    <>
+                                        <button
+                                            type="button"
+                                            onClick={showPassFun}
+                                            style={{ background: "transparent", border: "none", outline: "none" }}>
+                                            {showPassword ? <i className="fa-regular fa-eye-slash fa-sm" /> : <i className="fa-regular fa-eye fa-sm" />}
+                                        </button>
+                                    </>
                                 </div>
                             </fieldset>
                             <fieldset>

@@ -2,23 +2,33 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { validate } from "../components/EmailValidator";
 
 function Signup() {
     const navigate = useNavigate();
     const api_URL = process.env.REACT_APP_BASE_API_URL;
     const [loading, setLoading] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
     const [user, setUser] = useState({ username: "", email: "", password: "" });
 
     const loginPage = () => {
         navigate(`/login`)
     }
+
+    const showPassFun = () => {
+        setShowPassword(!showPassword)
+    }
+
     const subminHandler = async (e) => {
         e.preventDefault();
         setLoading(true);
-        console.log(user);
+        let test = validate(user.email)
 
         if (user.username === "" || user.email === "" || user.password === "") {
             toast.warning("Enter Value");
+            setLoading(false);
+        } else if (!test) {
+            toast.warning("Invalid email");
             setLoading(false);
         } else {
             try {
@@ -69,17 +79,26 @@ function Signup() {
                                         type="email"
                                         placeholder="email"
                                         value={user.email}
+                                        required
                                         onChange={(e) => setUser({ ...user, email: e.target.value })}
                                     />
                                 </div>
 
                                 <div className="mb-3">
                                     <input
-                                        type="password"
+                                        type={showPassword ? 'text' : 'password'}
                                         placeholder="password"
                                         value={user.password}
                                         onChange={(e) => setUser({ ...user, password: e.target.value })}
                                     />
+                                    <>
+                                        <button
+                                            type="button"
+                                            onClick={showPassFun}
+                                            style={{ background: "transparent", border: "none", outline: "none" }}>
+                                            {showPassword ? <i className="fa-regular fa-eye-slash fa-sm" /> : <i className="fa-regular fa-eye fa-sm" />}
+                                        </button>
+                                    </>
                                 </div>
                             </fieldset>
                             <fieldset>
