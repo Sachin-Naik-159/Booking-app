@@ -38,15 +38,15 @@ function Checkout() {
 
     return (
         <div className="Container">
-            <div className="p-3 mb-5">
+            
                 <FixedBar />
-            </div>
+            
             <div className="min-vh-100 d-flex align-items-center rounded">
-                <div className="container mt-5 shadow-lg p-3 mb-5 bg-white rounded">
+                <div className="container mt-5 pt-5 shadow-lg p-3 mb-5 bg-white rounded">
                     <div className="row justify-content-center align-items-center">
 
-                        <div className="col-lg-6 col-md-12">
-                            <img src={require("../asset/Venues/1/OlympiansDen1696830589175.webp")} className="d-block w-100" alt="1" />
+                        <div className="col-lg-6 col-md-12 mb-5">
+                            <img src={require("../asset/Venues/1/OlympiansDen1696830589175.webp")} className="d-block w-100 rounded" alt="1" />
                         </div>
                         <div className="col-lg-6 col-md-12">
                             <h2 className="pb-1">Olympian's Den</h2>

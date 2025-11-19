@@ -53,7 +53,7 @@ function Signup() {
         <div className="min-vh-100 d-flex align-items-center rounded">
             <div className="container mt-5 shadow-lg p-3 mb-5 bg-white rounded">
                 <div className="row justify-content-center align-items-center">
-                    <div className="col-6">
+                    <div className="col-xl-6 col-lg-5 col-md-5 col-sm-12">
                         <div className="card">
                             <img className="img-fluid rounded"
                                 src="https://images.unsplash.com/photo-1708312604109-16c0be9326cd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074"
@@ -61,7 +61,7 @@ function Signup() {
                                 alt="Brand Image" />
                         </div>
                     </div>
-                    <div className="col-6">
+                    <div className="col-xl-6 col-lg-7 col-md-7 col-sm-12 p-5">
                         <form className="mb-3">
                             <fieldset>
                                 <legend>Signup</legend>

@@ -57,9 +57,9 @@ function AdminPanel() {
 
     return <>
         <FixedBar />
-        <div className="p-4"></div>
-        <div className="p-5">
-            <table className="table table-striped table-bordered">
+        <div className="p-4"></div> 
+        <div className="p-5 mt-5">
+            <table className="table table-striped table-bordered mt-5">
                 <TableHead />
                 <tbody>
                     {bookings.map((e, i) => (
@@ -78,9 +78,9 @@ function AdminPanel() {
                 </tbody>
             </table>
         </div>
-        <div className="p-5">
+        {/* <div className="p-5">
             <button type="button" className="btn btn-primary" onClick={getBooking}>Refresh</button>
-        </div>
+        </div> */}
     </>
 }
 

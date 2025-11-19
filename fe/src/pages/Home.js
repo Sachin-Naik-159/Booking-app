@@ -6,8 +6,8 @@ import Tray from "../components/Tray";
 function Home() {
     return (
         <div className="Container">
-            <div className="p-3 mb-5">
                 <FixedBar />
+            <div className="p-3 mb-5">
             </div>
             <Tray />
             <Footer />

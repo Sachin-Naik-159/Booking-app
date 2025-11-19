@@ -44,7 +44,7 @@ function FixedBar() {
     };
 
     return (
-        <div className="fixed-bar row p-1">
+        <div className="fixed-bar row p-3" style={{backgroundColor:"#2f7099"}}>
             <div className="col-xl-11 col-lg-11 col-md-10 col-sm-10">
                 <img src={require("../asset/new-logo-playo.png")} className="logo" alt="logo" onClick={home} />
             </div>

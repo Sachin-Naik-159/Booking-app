@@ -1,0 +1,16 @@
+.cardSports{ 
+    width:10rem;
+}
+
+.card{
+    background: transparent; 
+    border: none; 
+    outline: none; 
+}
+
+.glow:hover{
+  
+  box-shadow: 0 0 15px #2f709950,
+              0 0 25px #2f709950,
+              0 0 35px #2f709950;
+}

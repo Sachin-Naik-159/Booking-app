@@ -17,16 +17,16 @@ function VenueDetail() {
     return (
 
         <div className="Container">
-            <div className="p-3 mb-5">
+            
                 <FixedBar />
-            </div>
+            
             <>
-                <div className="row">
+                <div className="row" >
                     <div className="col-1">
                     </div>
-                    <div className="col-10">
+                    <div className="col-10 mt-5">
                         <div className="row mt-5 pt-5">
-                            <div className="col-lg-8 col-md-12">
+                            <div className="col-xl-8 col-lg-6 col-md-12">
                                 <div>
                                     <h1 className="pb-1">Olympian's Den</h1>
                                     <p>Kalinganagar</p>
@@ -58,21 +58,21 @@ function VenueDetail() {
                                 </div>
 
                             </div>
-                            <div className="col-lg-4 col-md-12 pt-3 mt-5">
-                                <button type="button" className="btn btn-success mt-3 p-2" style={{ width: "100%" }} onClick={checkOutPage}>Book Now</button>
+                            <div className="col-xl-4 col-lg-6 col-md-12 pt-3 mt-5">
+                                <button type="button" className="btn btn-success mt-4 p-3" style={{ width: "100%" }} onClick={checkOutPage}>Book Now</button>
 
-                                <div className="row mt-3 pt-3">
+                                <div className="row mt-1 pt-1">
                                     <h3>Timing</h3>
                                     <p>9 AM - 4 PM</p>
                                 </div>
-                                <div className="row mt-3 pt-3">
+                                <div className="row mt-1 pt-1">
                                     <h3>Location</h3>
                                     <p>1604/2254, Paikrapur, Behind BDA Colony, Phase - 2, Trident Galaxy Square, Kalinganagar, Bhubaneswar, Odisha - 751003</p>
                                 </div>
-                                <iframe className="row mt-3 pt-3" width="500px" height="300px" loading="lazy" referrerPolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?q=1604%2F2254%2C%20Paikrapur%2C%20Behind%20BDA%20Colony%2C%20Phase%20-%202%2C%20Trident%20Galaxy%20Square%2C%20Kalinganagar%2C%20Bhubaneswar%2C%20Odisha%20-%20751003&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                                <iframe className="row mt-1 pt-1" width="100%" height="50%" loading="lazy" referrerPolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?q=1604%2F2254%2C%20Paikrapur%2C%20Behind%20BDA%20Colony%2C%20Phase%20-%202%2C%20Trident%20Galaxy%20Square%2C%20Kalinganagar%2C%20Bhubaneswar%2C%20Odisha%20-%20751003&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
                             </div>
                         </div>
-                        <div className="row mt-5 pt-5">
+                        <div className="row mt-5 pt-5" >
                             <h3>Sports Available</h3>
                             <div className="card mt-3" style={{ width: "10rem" }}>
                                 <img src={require("../asset/Venues/SP5.png")} className="card-img-top" alt="..." />
@@ -96,9 +96,17 @@ function VenueDetail() {
                             </div>
 
 
+                            <div className="card mt-3" style={{ width: "10rem" }}>
+                                <img src={require("../asset/Venues/SP2.png")} className="card-img-top" alt="..." />
+                                <div className="card-body">
+                                    <p className="card-title">Football</p>
+                                </div>
+                            </div>
+
+
 
                         </div>
-                        <div className="row mt-5 pt-5">
+                        <div className="row mt-5 pt-5" >
                             <h3 >About Venue</h3>
                             <p className="mt-3">Badminton:</p>
                             <p>- Non Marking Shoes compulsory for Badminton. Shoes must be worn after entering the facility.<br></br>

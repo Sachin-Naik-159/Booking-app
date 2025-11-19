@@ -5,7 +5,7 @@ import Venues from "./Venues";
 
 function Tray() {
   return (
-    <div className="overflow-hidden text-center row gx-5">
+    <div className="overflow-hidden row gx-5">
       <Intro />
       <Venues />
       <Sport />
