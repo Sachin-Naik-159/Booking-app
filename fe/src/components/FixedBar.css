@@ -1,7 +1,7 @@
 .fixed-bar {
     position: fixed;
     width: 100%;
-    padding: 2px;
+    /* padding: 2px; */
     z-index: 10;
     background-color: white;
 }

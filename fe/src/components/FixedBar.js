@@ -7,7 +7,7 @@ import ProfileImage from "./ProfileImage";
 function FixedBar() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const type = window.location.pathname.split("/")[1];
+    let type = window.location.pathname.split("/")[1];
 
     let admin = false;
 
@@ -16,7 +16,6 @@ function FixedBar() {
     });
     if (user) {
         admin = user.isAdmin;
-        console.log(user.username);
     }
 
     const booking = () => {
@@ -33,7 +32,7 @@ function FixedBar() {
     };
 
     const handleLogout = () => {
-        if (type === "type" || type === "adminPanel" || type === "checkout") {
+        if (type === "type" || type === "adminPanel" || type === "checkout" || type === "booking") {
             home()
         }
         localStorage.removeItem("token");
@@ -44,7 +43,7 @@ function FixedBar() {
     };
 
     return (
-        <div className="fixed-bar row p-3" style={{backgroundColor:"#2f7099"}}>
+        <div className="fixed-bar row p-3" style={{ backgroundColor: "#2f7099" }}>
             <div className="col-xl-11 col-lg-11 col-md-10 col-sm-10">
                 <img src={require("../asset/new-logo-playo.png")} className="logo" alt="logo" onClick={home} />
             </div>

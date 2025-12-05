@@ -3,7 +3,9 @@
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import About from "./pages/About";
 import Signup from "./pages/Signup";
+import Contact from "./pages/Contact";
 import Booking from "./pages/Bookings";
 import Checkout from "./pages/Checkout";
 import VenueDetail from "./pages/VenueDetail";
@@ -56,10 +58,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/about" element={<About />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/booking" element={<Booking />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/details" element={<VenueDetail />} />
-        <Route path="/booking" element={<Booking />} />
         <Route path="/adminPanel" element={<AdminPanel />} />
       </Routes>
     );
